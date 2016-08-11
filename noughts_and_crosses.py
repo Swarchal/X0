@@ -83,7 +83,12 @@ class X0():
         if self.winner != None:
             return None
 
-        positions = (self.cross_pos if player == "X" else self.nought_pos)
+        # determine positions of player
+        if player == "X":
+            positions = self.cross_pos
+        if player == "0":
+            positions = self.nought_pos
+            
         for winning_moves in self.winning_positions:
             total=0
             for winning_pos in winning_moves:
