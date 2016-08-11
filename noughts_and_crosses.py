@@ -21,12 +21,21 @@ class X0():
         self.cross_pos = []
         self.nought_pos = []
         self.winner = None
+        self.last_player = None
 
-    def clear_grid(self):
+
+    def __len__(self):
+        """ number of moves played """
+        return len(self.cross_pos) + len(self.nought_pos)
+
+
+    def reset(self):
         """ reset grid and player moves """
         self.grid = [["."]*3 for i in range(3)]
         self.cross_pos = []
         self.nought_pos = []
+        self.winner = None
+        self.last_player = None
 
 
     def show_grid(self):
@@ -43,6 +52,9 @@ class X0():
         if player not in self._players:
             raise ValueError("invalid player, options are 'X' or '0'")
 
+        if self.last_player == player:
+            raise ValueError("it's the other player's turn!")
+
         # check there is not already an item in that position
         if self.grid[position[0]][position[1]] == ".":
             self.grid[position[0]][position[1]] = player
@@ -58,6 +70,7 @@ class X0():
         if self._each_turn:
             self.show_grid()
 
+        self.last_player = player
         self.check_for_winner(player)
 
 
