@@ -16,7 +16,7 @@ class X0():
             [[2,0], [1,1], [0,2]]
             ]
         # create an empty grid
-        self.grid = [["."]*3 for i in range(3)]
+        self.grid = [["·"]*3 for i in range(3)]
         # list of current player positions
         self.cross_pos = []
         self.nought_pos = []
@@ -31,7 +31,7 @@ class X0():
 
     def reset(self):
         """ reset grid and player moves """
-        self.grid = [["."]*3 for i in range(3)]
+        self.grid = [["·"]*3 for i in range(3)]
         self.cross_pos = []
         self.nought_pos = []
         self.winner = None
@@ -56,7 +56,7 @@ class X0():
             raise ValueError("it's the other player's turn!")
 
         # check there is not already an item in that position
-        if self.grid[position[0]][position[1]] == ".":
+        if self.grid[position[0]][position[1]] == "·":
             self.grid[position[0]][position[1]] = player
         else:
             raise IndexError("already an item at that position")
@@ -88,7 +88,7 @@ class X0():
             positions = self.cross_pos
         if player == "0":
             positions = self.nought_pos
-            
+
         for winning_moves in self.winning_positions:
             total=0
             for winning_pos in winning_moves:
