@@ -15,7 +15,7 @@ game.place("0", [1,1])
 
 ```
 
-Pieces are placed at x,y co-ordinates
+Pieces are placed at *i*,*j* positions (think rows and columns of a matrix).
 
 ```
 +-----+-----+-----+
