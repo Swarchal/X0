@@ -5,9 +5,9 @@ A simple framework for a noughts and crosses (tic-tac-toe) game.
 ### How to play:
 
 ```python
-from noughts_and_crosses import X0
+from noughts_and_crosses import Game
 
-game = X0()
+game = Game()
 
 game.place("X", [0,0])
 

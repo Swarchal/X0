@@ -1,4 +1,4 @@
-class X0():
+class Game():
 
     def __init__(self, show_each_turn=True):
         self._players = ["X", "0"]
