@@ -79,7 +79,7 @@ class X0():
         check the grid to see if there are any winners
         if so, return name of winning player
         """
-        # if a player has already one, don't set new winner
+        # if a player has already won, don't set new winner
         if self.winner != None:
             return None
 
@@ -90,7 +90,7 @@ class X0():
             positions = self.nought_pos
 
         for winning_moves in self.winning_positions:
-            total=0
+            total = 0
             for winning_pos in winning_moves:
                 if winning_pos in positions:
                     total+=1
